@@ -25,7 +25,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20112%20112%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%2256%22%20cy%3D%2256%22%20r%3D%2248%22%20fill%3D%22%230F172A%22%2F%3E%3Ccircle%20cx%3D%2256%22%20cy%3D%2256%22%20r%3D%2247%22%20fill%3D%22none%22%20stroke%3D%22%233B82F6%22%20stroke-width%3D%224%22%20opacity%3D%220.98%22%2F%3E%3Cpath%20d%3D%22M88%2022a7%207%200%201%201%200%2014a7%207%200%200%201%200-14Z%22%20fill%3D%22%2386EFAC%22%2F%3E%3Cpath%20d%3D%22M44%2034V78%22%20fill%3D%22none%22%20stroke%3D%22%2360A5FA%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M44%2060L76%2028%22%20fill%3D%22none%22%20stroke%3D%22%2360A5FA%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M61%2062L79%2080%22%20fill%3D%22none%22%20stroke%3D%22%237DD3FC%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M68%2032L80%2029L77%2041%22%20fill%3D%22none%22%20stroke%3D%22%2386EFAC%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20112%20112%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%2256%22%20cy%3D%2256%22%20r%3D%2248%22%20fill%3D%22%230F172A%22%2F%3E%3Ccircle%20cx%3D%2256%22%20cy%3D%2256%22%20r%3D%2247%22%20fill%3D%22none%22%20stroke%3D%22%233B82F6%22%20stroke-width%3D%224%22%20opacity%3D%220.98%22%2F%3E%3Cpath%20d%3D%22M88%2022a7%207%200%201%201%200%2014a7%207%200%200%201%200-14Z%22%20fill%3D%22%2386EFAC%22%2F%3E%3Cpath%20d%3D%22M44%2034V78%22%20fill%3D%22none%22%20stroke%3D%22%2360A5FA%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M44%2060L76%2028%22%20fill%3D%22none%22%20stroke%3D%22%2360A5FA%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M61%2062L79%2080%22%20fill%3D%22none%22%20stroke%3D%22%237DD3FC%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M68%2032L80%2029L77%2041%22%20fill%3D%22none%22%20stroke%3D%22%2386EFAC%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E">
 <title>KalanParam</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -320,6 +320,74 @@ body{
   min-height:100vh;
   padding:0 34px;
   box-sizing:border-box;
+}
+:root{
+  --side-font:"Plus Jakarta Sans",Inter,"Segoe UI",Arial,sans-serif;
+}
+.side-link,
+.side-link span:last-child,
+.top-actions .theme-toggle,
+.top-actions .ghost,
+.top-actions .btn,
+#logoutBtn,
+#userBox,
+#userBox *{
+  font-family:var(--side-font);
+}
+.side-link{letter-spacing:-.015em}
+.side-link span:last-child{font-weight:800;font-size:15px}
+.tool-card{position:relative;overflow:hidden}
+.tool-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top right, rgba(59,130,246,.10), transparent 28%), radial-gradient(circle at bottom left, rgba(34,197,94,.08), transparent 24%);
+  pointer-events:none;
+}
+.tool-card > *{position:relative;z-index:1}
+.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.tool-grid.compact-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tool-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.tool-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.tool-result{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:14px 16px;
+  background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(241,245,249,.92));
+}
+.tool-result .k{color:var(--muted);font-size:12px;font-weight:800;margin-bottom:8px}
+.tool-result .v{font-size:28px;font-weight:900;letter-spacing:-.03em}
+.tool-result .s{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.45}
+.tool-note{
+  margin-top:14px;
+  padding:14px 16px;
+  border:1px dashed rgba(148,163,184,.42);
+  border-radius:16px;
+  color:#5b6877;
+  background:rgba(248,250,252,.85);
+  line-height:1.55;
+  font-size:13px;
+}
+.tool-pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.tool-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:#fff;
+  font-size:12px;
+  font-weight:800;
+  color:#0f172a;
+}
+body:not(.light-mode) .tool-result{background:linear-gradient(180deg,#111923,#0f1620);border-color:rgba(148,163,184,.18)}
+body:not(.light-mode) .tool-note{background:#111923;border-color:rgba(148,163,184,.24);color:#a5b4c5}
+body:not(.light-mode) .tool-pill{background:#111923;border-color:rgba(148,163,184,.22);color:#e2e8f0}
+@media (max-width:1080px){
+  .tool-grid,
+  .tool-grid.compact-3,
+  .tool-summary-grid{grid-template-columns:1fr}
 }
 .wrap{max-width:1280px;margin:0 auto;padding:28px 0 34px}
 .topbar,.card{
@@ -1649,15 +1717,21 @@ body.light-mode .brand-sub{
 .site-header-brand-inner{
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:space-between;
   gap:18px;
-  width:min(760px,100%);
+  width:min(1180px,100%);
   padding:18px 28px;
   border-radius:28px;
   border:1px solid rgba(148,163,184,.18);
   background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
   box-shadow:0 18px 40px rgba(2,6,23,.16);
   backdrop-filter:blur(12px);
+}
+.site-brand-main{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  min-width:0;
 }
 .site-logo-mark{
   width:72px;
@@ -1675,8 +1749,8 @@ body.light-mode .brand-sub{
 .site-brand-copy{
   display:flex;
   flex-direction:column;
-  align-items:center;
-  text-align:center;
+  align-items:flex-start;
+  text-align:left;
   gap:6px;
 }
 .site-brand-text{
@@ -1717,14 +1791,43 @@ body:not(.light-mode) .site-logo-mark{
 }
 body:not(.light-mode) .site-brand-text{color:#f8fbff}
 body:not(.light-mode) .site-brand-sub{color:#c7d2e0}
+.site-header-brand .top-actions{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:10px;
+  min-width:0;
+}
+.site-header-brand #authTriggerRow{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,auto));
+  gap:10px;
+}
+.site-header-brand #userBox .item{min-width:220px}
+.site-header-brand #logoutBtn,
+.site-header-brand .theme-toggle,
+.site-header-brand .reminder-btn,
+.site-header-brand #authTriggerRow .ghost,
+.site-header-brand #authTriggerRow .btn{min-height:46px}
 @media (max-width:1080px){
   .site-header-brand{margin-bottom:14px}
   .site-header-brand-inner{padding:16px 20px;gap:14px;border-radius:24px}
+  .site-brand-main{gap:14px}
   .site-logo-mark{width:62px;height:62px;flex-basis:62px;border-radius:18px}
   .site-brand-text{font-size:34px}
 }
 @media (max-width:680px){
-  .site-header-brand-inner{flex-direction:column;padding:16px 18px;gap:12px}
+  .site-header-brand-inner{flex-direction:column;align-items:stretch;padding:16px 18px;gap:12px}
+  .site-brand-main{justify-content:center}
+  .site-brand-copy{align-items:center;text-align:center}
+  .site-header-brand .top-actions{justify-content:center;width:100%}
+  .site-header-brand #authTriggerRow{width:100%;grid-template-columns:1fr 1fr}
+  .site-header-brand #authTriggerRow .ghost,
+  .site-header-brand #authTriggerRow .btn,
+  .site-header-brand #logoutBtn{width:100%}
+  .site-header-brand #userBox{width:100%}
+  .site-header-brand #userBox .item{width:100%;min-width:0}
   .site-logo-mark{width:58px;height:58px;flex-basis:58px}
   .site-brand-text{font-size:28px;letter-spacing:-.8px}
   .site-brand-sub{font-size:13px;max-width:280px}
@@ -2162,6 +2265,56 @@ body.light-mode .site-brand-sub{
   max-width:560px !important;
 }
 
+/* Header brand alanı iki temada da açık mod ölçüsünde kalsın */
+.site-header-brand .top-actions{
+  margin-top:12px;
+  display:flex !important;
+  flex-direction:column;
+  gap:8px !important;
+  align-items:stretch !important;
+  width:min(355px,100%);
+  flex:0 0 min(355px,100%);
+}
+.site-header-brand #authTriggerRow{
+  display:grid !important;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  width:100%;
+}
+.site-header-brand .theme-toggle,
+.site-header-brand .reminder-btn,
+.site-header-brand #logoutBtn,
+.site-header-brand #authTriggerRow .ghost,
+.site-header-brand #authTriggerRow .btn{
+  width:100%;
+  min-height:46px;
+  justify-content:center;
+}
+.site-header-brand .reminder-btn{
+  width:100%;
+}
+body:not(.light-mode) .site-header-brand-inner{
+  width:min(760px,100%) !important;
+  padding:0 !important;
+  border:none !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+}
+body:not(.light-mode) .site-header-brand{
+  margin:2px auto 16px !important;
+}
+body:not(.light-mode) .site-brand-sub{
+  max-width:560px !important;
+}
+@media (max-width:680px){
+  .site-header-brand .top-actions{
+    width:100%;
+    flex:1 1 auto;
+  }
+}
+
 @media (min-width:1081px){
   body.light-mode .topbar,
   body:not(.light-mode) .topbar{
@@ -2212,6 +2365,65 @@ body.light-mode .site-brand-sub{
     grid-template-columns:1fr !important;
     gap:8px !important;
   }
+}
+body.light-mode .site-header-brand .top-actions,
+body:not(.light-mode) .site-header-brand .top-actions{
+  width:auto !important;
+  margin-top:0 !important;
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:10px !important;
+  align-self:center !important;
+}
+body.light-mode .site-header-brand #authTriggerRow,
+body:not(.light-mode) .site-header-brand #authTriggerRow{
+  width:auto !important;
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,auto)) !important;
+  gap:10px !important;
+}
+@media (max-width:680px){
+  body.light-mode .site-header-brand .top-actions,
+  body:not(.light-mode) .site-header-brand .top-actions{
+    width:100% !important;
+    justify-content:center !important;
+  }
+  body.light-mode .site-header-brand #authTriggerRow,
+  body:not(.light-mode) .site-header-brand #authTriggerRow{
+    width:100% !important;
+    grid-template-columns:1fr 1fr !important;
+  }
+}
+
+
+/* Light mode visibility fix for monthly income areas */
+body.light-mode .stat.dark{
+  background:linear-gradient(145deg,#1e3a5f,#2563eb) !important;
+  border:1px solid #2d5fae !important;
+}
+body.light-mode .stat.dark .label{
+  color:rgba(255,255,255,.92) !important;
+  opacity:1 !important;
+}
+body.light-mode .stat.dark .num{
+  color:#ffffff !important;
+  text-shadow:none !important;
+}
+body.light-mode .income-total-card{
+  background:linear-gradient(180deg,#eff6ff,#dbeafe) !important;
+  border:1px solid #bfdbfe !important;
+}
+body.light-mode .income-total-card .muted{
+  color:#1e3a8a !important;
+  opacity:1 !important;
+}
+body.light-mode .income-total-card .big{
+  color:#0f172a !important;
+}
+body.light-mode .income-total-card .helper-note{
+  color:#334155 !important;
 }
 
 </style>
@@ -2307,6 +2519,7 @@ body.light-mode .site-brand-sub{
 <div class="wrap">
   <div class="site-header-brand" aria-label="KalanParam">
     <div class="site-header-brand-inner">
+      <div class="site-brand-main">
       <span class="site-logo-mark" aria-hidden="true">
         <svg viewBox="0 0 112 112" role="img" focusable="false" aria-label="KalanParam logosu" xmlns="http://www.w3.org/2000/svg">
   <circle cx="56" cy="56" r="48" fill="#0F172A"/>
@@ -2322,6 +2535,25 @@ body.light-mode .site-brand-sub{
         <div class="site-brand-text"><span class="brand-kalan">Kalan</span><span class="brand-param">Param</span></div>
         <div class="site-brand-sub">Gelirini, giderini ve kalanını tek ekranda yönet.</div>
       </div>
+      </div>
+      <div class="top-actions">
+        <button class="theme-toggle" onclick="toggleTheme()" title="Tema değiştir" id="themeToggleBtn">🌙 Koyu</button>
+        <button class="reminder-btn" onclick="openReminderPanel()" title="Hatırlatıcılar" id="reminderBellBtn">🔔<span class="reminder-dot" id="reminderDot"></span></button>
+        <div id="authTriggerRow">
+          <button class="ghost" onclick="openAuthModal()">Kayıt Ol</button>
+          <button class="btn" onclick="openAuthModal('login')">Giriş Yap</button>
+        </div>
+        <div id="userBox" class="hidden">
+          <div class="item" style="padding:8px 12px">
+            <div>
+              <div class="t" id="userDisplayName">-</div>
+              <div class="s" id="userSubline">Kayıtlı analiz açık</div>
+            </div>
+            <div class="pill" id="monthCountPill">0 kayıtlı ay</div>
+          </div>
+        </div>
+        <button type="button" class="ghost hidden" id="logoutBtn" onclick="logout()">Çıkış Yap</button>
+      </div>
     </div>
   </div>
   <div class="topbar">
@@ -2331,29 +2563,16 @@ body.light-mode .site-brand-sub{
       <a href="#analysisSection" class="side-link"><span class="side-ico">📊</span><span>Analiz</span></a>
       <a href="#salarySection" class="side-link"><span class="side-ico">₺</span><span>Maaş Hesaplama</span></a>
       <a href="#retirementSection" class="side-link"><span class="side-ico">👴</span><span>Emekli Maaşı Hesaplama</span></a>
+      <a href="#severanceSection" class="side-link"><span class="side-ico">🧮</span><span>Kıdem / İhbar Hesaplama</span></a>
+      <a href="#raiseSection" class="side-link"><span class="side-ico">📈</span><span>Maaş Zammı Hesaplama</span></a>
+      <a href="#unemploymentSection" class="side-link"><span class="side-ico">🛟</span><span>İşsizlik Maaşı Hesaplama</span></a>
+      <a href="#overtimeSection" class="side-link"><span class="side-ico">⏱️</span><span>Fazla Mesai Hesaplama</span></a>
+      <a href="#leaveSection" class="side-link"><span class="side-ico">🗓️</span><span>Yıllık İzin Hesaplama</span></a>
       <a href="#taxSection" class="side-link"><span class="side-ico">🧾</span><span>Vergi</span></a>
       <a href="#historySection" class="side-link hidden" id="historyNavLink"><span class="side-ico">🗂️</span><span>Kayıtlı Aylar</span></a>
       <a href="#articlesSection" class="side-link"><span class="side-ico">📰</span><span>Makaleler</span></a>
       <a href="#otherSection" class="side-link"><span class="side-ico">ℹ️</span><span>Diğer</span></a>
     </nav>
-    <div class="top-actions">
-      <button class="theme-toggle" onclick="toggleTheme()" title="Tema değiştir" id="themeToggleBtn">🌙 Koyu</button>
-      <button class="reminder-btn" onclick="openReminderPanel()" title="Hatırlatıcılar" id="reminderBellBtn">🔔<span class="reminder-dot" id="reminderDot"></span></button>
-      <div id="authTriggerRow">
-        <button class="ghost" onclick="openAuthModal()">Kayıt Ol</button>
-        <button class="btn" onclick="openAuthModal('login')">Giriş Yap</button>
-      </div>
-      <div id="userBox" class="hidden">
-        <div class="item" style="padding:8px 12px">
-          <div>
-            <div class="t" id="userDisplayName">-</div>
-            <div class="s" id="userSubline">Kayıtlı analiz açık</div>
-          </div>
-          <div class="pill" id="monthCountPill">0 kayıtlı ay</div>
-        </div>
-      </div>
-      <button type="button" class="ghost hidden" id="logoutBtn" onclick="logout()">Çıkış Yap</button>
-    </div>
   </div>
 
   <div id="globalMessage" class="msg hidden"></div>
@@ -2731,6 +2950,225 @@ body.light-mode .site-brand-sub{
         <a class="retirement-link" href="https://www.sgk.gov.tr/" target="_blank" rel="noopener noreferrer">SGK resmi sitesi</a>
       </div>
     </div>
+  </section>
+
+  <section class="card tool-card" id="severanceSection" data-subpage="severance">
+    <div class="head">
+      <h2>Kıdem ve İhbar Tazminatı Hesaplama</h2>
+      <div class="tax-chip">2026 hızlı araç</div>
+    </div>
+    <p class="tax-note">Kıdem için giydirilmiş brüt ücret ve hizmet süresini, ihbar için de aynı ücret üzerinden bildirim süresi karşılığını birlikte gösterir. İhbar tarafındaki net alanı, seçtiğin gelir vergisi oranına göre hızlı tahmin üretir.</p>
+    <div class="tool-grid compact-3">
+      <div>
+        <label>Aylık Brüt Ücret</label>
+        <input type="number" id="severanceGross" min="0" step="0.01" placeholder="Örn: 60000">
+      </div>
+      <div>
+        <label>Aylık Düzenli Yan Hak</label>
+        <input type="number" id="severanceBenefits" min="0" step="0.01" placeholder="Örn: 3000">
+      </div>
+      <div>
+        <label>İhbar için Vergi Oranı</label>
+        <select id="severanceTaxRate" class="select">
+          <option value="15">%15</option>
+          <option value="20" selected>%20</option>
+          <option value="27">%27</option>
+          <option value="35">%35</option>
+          <option value="40">%40</option>
+        </select>
+      </div>
+      <div>
+        <label>Tam Yıl</label>
+        <input type="number" id="severanceYears" min="0" step="1" placeholder="Örn: 5">
+      </div>
+      <div>
+        <label>Ek Ay</label>
+        <input type="number" id="severanceMonths" min="0" max="11" step="1" placeholder="Örn: 4">
+      </div>
+      <div>
+        <label>Ek Gün</label>
+        <input type="number" id="severanceDays" min="0" max="30" step="1" placeholder="Örn: 12">
+      </div>
+    </div>
+    <div class="tool-actions">
+      <button class="btn" type="button" id="severanceCalcBtn">Hesapla</button>
+      <button class="ghost" type="button" id="severanceResetBtn">Temizle</button>
+    </div>
+    <div class="tool-summary-grid">
+      <div class="tool-result"><div class="k">Kıdem brüt</div><div class="v" id="severanceGrossResult">₺0</div><div class="s" id="severanceGrossHint">1 yıl ve üzeri uygun ayrılış varsayımıyla hesaplanır.</div></div>
+      <div class="tool-result"><div class="k">Kıdem net tahmini</div><div class="v" id="severanceNetResult">₺0</div><div class="s">Damga vergisi düşülmüş hızlı görünüm.</div></div>
+      <div class="tool-result"><div class="k">İhbar brüt</div><div class="v" id="noticeGrossResult">₺0</div><div class="s" id="noticeWeeksHint">Bildirim süresine göre hesaplanır.</div></div>
+      <div class="tool-result"><div class="k">İhbar net tahmini</div><div class="v" id="noticeNetResult">₺0</div><div class="s">Seçilen vergi oranı + damga vergisi ile yaklaşık net.</div></div>
+    </div>
+    <div class="tool-pill-row">
+      <div class="tool-pill">Kıdem tavanı: <strong id="severanceCapPill">₺64.949</strong></div>
+      <div class="tool-pill">Hizmet süresi: <strong id="severanceServicePill">0 yıl</strong></div>
+      <div class="tool-pill">İhbar süresi: <strong id="noticeWeeksPill">0 hafta</strong></div>
+    </div>
+    <div class="tool-note" id="severanceNote">1475 m.14 mantığıyla kıdem, 4857 m.17 mantığıyla ihbar görünümü verir. Kıdemde 2026 Ocak-Haziran tavanı, ihbarda ise seçilen marjinal vergi oranı baz alınır.</div>
+  </section>
+
+  <section class="card tool-card" id="raiseSection" data-subpage="raise">
+    <div class="head">
+      <h2>Maaş Zam Hesaplama</h2>
+      <div class="tax-chip">tek ekranda fark analizi</div>
+    </div>
+    <p class="tax-note">Brüt ya da net maaşını seç, zam oranını veya sabit TL artışı gir; aylık ve yıllık farkı anında gör. Brüt seçersen bu yılın ilk bordro görünümüne göre yaklaşık yeni neti de hesaplar.</p>
+    <div class="tool-grid">
+      <div>
+        <label>Hesaplama Bazı</label>
+        <select id="raiseBasis" class="select">
+          <option value="gross" selected>Brüt Maaş</option>
+          <option value="net">Net Maaş</option>
+        </select>
+      </div>
+      <div>
+        <label>Mevcut Maaş</label>
+        <input type="number" id="raiseCurrentSalary" min="0" step="0.01" placeholder="Örn: 55000">
+      </div>
+      <div>
+        <label>Zam Tipi</label>
+        <select id="raiseType" class="select">
+          <option value="percent" selected>Yüzde Zam</option>
+          <option value="fixed">Sabit Tutar</option>
+        </select>
+      </div>
+      <div>
+        <label id="raiseValueLabel">Zam Oranı (%)</label>
+        <input type="number" id="raiseValue" min="0" step="0.01" placeholder="Örn: 20">
+      </div>
+    </div>
+    <div class="tool-actions">
+      <button class="btn" type="button" id="raiseCalcBtn">Hesapla</button>
+      <button class="ghost" type="button" id="raiseResetBtn">Temizle</button>
+    </div>
+    <div class="tool-summary-grid">
+      <div class="tool-result"><div class="k">Eski tutar</div><div class="v" id="raiseOldResult">₺0</div><div class="s">Karşılaştırma tabanı.</div></div>
+      <div class="tool-result"><div class="k">Yeni tutar</div><div class="v" id="raiseNewResult">₺0</div><div class="s" id="raiseNewHint">Zam sonrası tutar.</div></div>
+      <div class="tool-result"><div class="k">Aylık fark</div><div class="v" id="raiseMonthlyDiff">₺0</div><div class="s">Bir ayda cebine eklenen artış.</div></div>
+      <div class="tool-result"><div class="k">Yıllık fark</div><div class="v" id="raiseAnnualDiff">₺0</div><div class="s">12 aya yayılan toplam artış.</div></div>
+    </div>
+    <div class="tool-note" id="raiseNote">Brüt modunda net farkı 2026 mevcut bordro parametrelerine göre yaklaşık hesaplanır; gerçek sonuç kümülatif vergi matrahına göre değişebilir.</div>
+  </section>
+
+  <section class="card tool-card" id="unemploymentSection" data-subpage="unemployment">
+    <div class="head">
+      <h2>İşsizlik Maaşı Hesaplama</h2>
+      <div class="tax-chip">İŞKUR görünümü</div>
+    </div>
+    <p class="tax-note">Son 4 aylık ortalama brüt kazanç ve son 3 yıldaki prim gününü gir; 4447 sayılı kanundaki temel oranlara göre aylık ödenek ve süreyi hızlıca gör.</p>
+    <div class="tool-grid">
+      <div>
+        <label>Son 4 Ay Ortalama Brüt Ücret</label>
+        <input type="number" id="unemploymentAvgGross" min="0" step="0.01" placeholder="Örn: 45000">
+      </div>
+      <div>
+        <label>Son 3 Yıldaki Prim Günü</label>
+        <input type="number" id="unemploymentPremiumDays" min="0" step="1" placeholder="Örn: 960">
+      </div>
+      <div>
+        <label>Son 120 Gün Kesintisiz Çalışma</label>
+        <select id="unemploymentContinuous" class="select">
+          <option value="yes" selected>Evet</option>
+          <option value="no">Hayır</option>
+        </select>
+      </div>
+      <div>
+        <label>Ayrılış Temel Şartı</label>
+        <select id="unemploymentEligibility" class="select">
+          <option value="yes" selected>Hak kazanma şartı sağlanıyor</option>
+          <option value="no">Şart sağlanmıyor</option>
+        </select>
+      </div>
+    </div>
+    <div class="tool-actions">
+      <button class="btn" type="button" id="unemploymentCalcBtn">Hesapla</button>
+      <button class="ghost" type="button" id="unemploymentResetBtn">Temizle</button>
+    </div>
+    <div class="tool-summary-grid">
+      <div class="tool-result"><div class="k">Aylık ödenek</div><div class="v" id="unemploymentMonthlyResult">₺0</div><div class="s">Brütün %40'ı, tavan uygulanmış görünüm.</div></div>
+      <div class="tool-result"><div class="k">Hak edilen süre</div><div class="v" id="unemploymentDurationResult">0 ay</div><div class="s">180 / 240 / 300 gün bandı.</div></div>
+      <div class="tool-result"><div class="k">Tavan kontrolü</div><div class="v" id="unemploymentCapResult">₺0</div><div class="s">2026 aylık üst sınır görünümü.</div></div>
+      <div class="tool-result"><div class="k">Durum</div><div class="v" id="unemploymentStatusResult">Hazır</div><div class="s" id="unemploymentStatusHint">Alanları doldurduğunda sonuç burada netleşir.</div></div>
+    </div>
+    <div class="tool-note" id="unemploymentNote">Temel formül: günlük ortalama brüt kazancın %40'ı ve aylık üst sınır olarak brüt asgari ücretin %80'i. Nihai hak sahipliği İŞKUR kayıtları ve ayrılış koduna göre belirlenir.</div>
+  </section>
+
+  <section class="card tool-card" id="overtimeSection" data-subpage="overtime">
+    <div class="head">
+      <h2>Fazla Mesai Hesaplama</h2>
+      <div class="tax-chip">225 saat bazlı</div>
+    </div>
+    <p class="tax-note">Normal 45 saatin üzerindeki fazla çalışma için saatlik brüt ücretini 1,5 katsayıyla çarpar. Aylık ve seçtiğin dönem toplamını birlikte gösterir.</p>
+    <div class="tool-grid">
+      <div>
+        <label>Aylık Brüt Ücret</label>
+        <input type="number" id="overtimeGross" min="0" step="0.01" placeholder="Örn: 50000">
+      </div>
+      <div>
+        <label>Aylık Fazla Mesai Saati</label>
+        <input type="number" id="overtimeHours" min="0" step="0.5" placeholder="Örn: 18">
+      </div>
+      <div>
+        <label>Dönem (Ay)</label>
+        <input type="number" id="overtimeMonths" min="1" step="1" value="1">
+      </div>
+      <div>
+        <label>Çarpan</label>
+        <select id="overtimeMultiplier" class="select">
+          <option value="1.5" selected>Normal fazla mesai (%50 zamlı)</option>
+          <option value="2">Hafta tatili / özel hesap (%100)</option>
+        </select>
+      </div>
+    </div>
+    <div class="tool-actions">
+      <button class="btn" type="button" id="overtimeCalcBtn">Hesapla</button>
+      <button class="ghost" type="button" id="overtimeResetBtn">Temizle</button>
+    </div>
+    <div class="tool-summary-grid">
+      <div class="tool-result"><div class="k">Saatlik brüt ücret</div><div class="v" id="overtimeHourlyResult">₺0</div><div class="s">Aylık ücret / 225 saat.</div></div>
+      <div class="tool-result"><div class="k">Saat başı mesai ücreti</div><div class="v" id="overtimePerHourResult">₺0</div><div class="s">Seçilen katsayı uygulanmış tutar.</div></div>
+      <div class="tool-result"><div class="k">Aylık fazla mesai</div><div class="v" id="overtimeMonthlyResult">₺0</div><div class="s">Girilen saat kadar bir aylık toplam.</div></div>
+      <div class="tool-result"><div class="k">Dönem toplamı</div><div class="v" id="overtimeTotalResult">₺0</div><div class="s">Seçilen ay sayısına göre toplu görünüm.</div></div>
+    </div>
+    <div class="tool-note" id="overtimeNote">Bu araç brüt fazla mesai karşılığını gösterir. Bordroda uygulanacak vergi ve diğer kesintiler işveren bordro düzenine göre değişebilir.</div>
+  </section>
+
+  <section class="card tool-card" id="leaveSection" data-subpage="leave">
+    <div class="head">
+      <h2>Yıllık İzin / İzin Ücreti Hesaplama</h2>
+      <div class="tax-chip">4857 m.53 görünümü</div>
+    </div>
+    <p class="tax-note">Kıdem ve yaş bilgine göre yıllık izin gününü, kullanmadığın izinler için de günlük brüt ücret üzerinden yaklaşık izin ücreti karşılığını gösterir.</p>
+    <div class="tool-grid">
+      <div>
+        <label>Toplam Hizmet Süresi (Yıl)</label>
+        <input type="number" id="leaveYears" min="0" step="0.1" placeholder="Örn: 6.5">
+      </div>
+      <div>
+        <label>Yaş</label>
+        <input type="number" id="leaveAge" min="14" step="1" placeholder="Örn: 32">
+      </div>
+      <div>
+        <label>Aylık Brüt Ücret</label>
+        <input type="number" id="leaveGross" min="0" step="0.01" placeholder="Örn: 42000">
+      </div>
+      <div>
+        <label>Kullanılmamış İzin Günü</label>
+        <input type="number" id="leaveUnusedDays" min="0" step="1" placeholder="Örn: 8">
+      </div>
+    </div>
+    <div class="tool-actions">
+      <button class="btn" type="button" id="leaveCalcBtn">Hesapla</button>
+      <button class="ghost" type="button" id="leaveResetBtn">Temizle</button>
+    </div>
+    <div class="tool-summary-grid">
+      <div class="tool-result"><div class="k">Yıllık izin hakkı</div><div class="v" id="leaveEntitlementResult">0 gün</div><div class="s">Yaş avantajı dahil temel hak.</div></div>
+      <div class="tool-result"><div class="k">Günlük brüt</div><div class="v" id="leaveDailyGrossResult">₺0</div><div class="s">Aylık brüt / 30 gün.</div></div>
+      <div class="tool-result"><div class="k">İzin ücreti brüt</div><div class="v" id="leaveUnusedGrossResult">₺0</div><div class="s">Kullanılmayan günler için yaklaşık brüt karşılık.</div></div>
+      <div class="tool-result"><div class="k">Not</div><div class="v" id="leaveStatusResult">Hazır</div><div class="s" id="leaveStatusHint">Hesap sonrası kısa yorum burada görünür.</div></div>
+    </div>
+    <div class="tool-note" id="leaveNote">1-5 yıl için 14 gün, 5-15 yıl arası için 20 gün, 15 yıl üzeri için 26 gün baz alınır. 18 yaş altı ve 50 yaş üstünde alt sınır en az 20 gündür.</div>
   </section>
 
   <section class="card" id="monthToMonthAnalysisSection" data-subpage="analysis">
@@ -3275,6 +3713,8 @@ const TAX_2026 = {
     { limit: Infinity, rate: 0.40 }
   ]
 };
+const SEVERANCE_CAP_2026_H1 = 64948.77;
+const UNEMPLOYMENT_CAP_2026 = TAX_2026.grossMinimumWage * 0.8;
 
 function safePercent(v){ return Math.max(0, Math.min(100, Number(v) || 0)); }
 function calcProgressiveTax(base, brackets){
@@ -3528,6 +3968,243 @@ function calculateRetirementPreview(){
   setRetirementPreviewText('retirementEstimatedRange', `${workingYears} yıl veri hazır`);
   setRetirementPreviewText('retirementStatus', statusText);
   setRetirementPreviewText('retirementNextStep', nextStepText);
+}
+function setToolText(id, value){
+  const el = document.getElementById(id);
+  if(el) el.textContent = value;
+}
+function setToolMoney(id, value){
+  setToolText(id, formatTRY(value));
+}
+function getGrossToNetPreviewForRaise(gross){
+  const minIncomeExemptionMonthly = calcProgressiveTax(TAX_2026.grossMinimumWage * (1 - EMPLOYEE_SGK_RATE - EMPLOYEE_UNEMP_RATE), TAX_2026.salaryBrackets);
+  const minStampExemptionMonthly = TAX_2026.grossMinimumWage * STAMP_TAX_RATE;
+  return getDetailedSalaryBreakdown(gross, 0, EMPLOYER_SGK_RATE, false, minIncomeExemptionMonthly, minStampExemptionMonthly);
+}
+function resetSeveranceTool(){
+  ['severanceGross','severanceBenefits','severanceYears','severanceMonths','severanceDays'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  const taxRate = document.getElementById('severanceTaxRate');
+  if(taxRate) taxRate.value = '20';
+  setToolMoney('severanceGrossResult', 0);
+  setToolMoney('severanceNetResult', 0);
+  setToolMoney('noticeGrossResult', 0);
+  setToolMoney('noticeNetResult', 0);
+  setToolText('severanceCapPill', formatTRY(SEVERANCE_CAP_2026_H1));
+  setToolText('severanceServicePill', '0 yıl');
+  setToolText('noticeWeeksPill', '0 hafta');
+  setToolText('severanceGrossHint', '1 yıl ve üzeri uygun ayrılış varsayımıyla hesaplanır.');
+  setToolText('noticeWeeksHint', 'Bildirim süresine göre hesaplanır.');
+  setToolText('severanceNote', '1475 m.14 mantığıyla kıdem, 4857 m.17 mantığıyla ihbar görünümü verir. Kıdemde 2026 Ocak-Haziran tavanı, ihbarda ise seçilen marjinal vergi oranı baz alınır.');
+}
+function calculateSeveranceTool(){
+  const gross = safeMoney(document.getElementById('severanceGross')?.value);
+  const benefits = safeMoney(document.getElementById('severanceBenefits')?.value);
+  const years = Math.max(0, Math.round(safeMoney(document.getElementById('severanceYears')?.value)));
+  const months = Math.max(0, Math.round(safeMoney(document.getElementById('severanceMonths')?.value)));
+  const days = Math.max(0, Math.round(safeMoney(document.getElementById('severanceDays')?.value)));
+  const taxRate = safePercent(document.getElementById('severanceTaxRate')?.value) / 100;
+  const totalYears = years + (months / 12) + (days / 365);
+  const totalMonths = (years * 12) + months + (days / 30);
+  const dressedGross = gross + benefits;
+  const cappedMonthly = Math.min(dressedGross, SEVERANCE_CAP_2026_H1);
+  const severanceGross = totalYears >= 1 ? cappedMonthly * totalYears : 0;
+  const severanceStamp = severanceGross * STAMP_TAX_RATE;
+  const severanceNet = Math.max(0, severanceGross - severanceStamp);
+  let noticeWeeks = 0;
+  if(totalMonths > 0 && totalMonths < 6) noticeWeeks = 2;
+  else if(totalMonths < 18) noticeWeeks = 4;
+  else if(totalMonths < 36) noticeWeeks = 6;
+  else if(totalMonths >= 36) noticeWeeks = 8;
+  const noticeGross = dressedGross * ((noticeWeeks * 7) / 30);
+  const noticeEstimatedTax = noticeGross * taxRate;
+  const noticeStamp = noticeGross * STAMP_TAX_RATE;
+  const noticeNet = Math.max(0, noticeGross - noticeEstimatedTax - noticeStamp);
+  setToolMoney('severanceGrossResult', severanceGross);
+  setToolMoney('severanceNetResult', severanceNet);
+  setToolMoney('noticeGrossResult', noticeGross);
+  setToolMoney('noticeNetResult', noticeNet);
+  setToolText('severanceCapPill', formatTRY(SEVERANCE_CAP_2026_H1));
+  setToolText('severanceServicePill', `${totalYears.toFixed(2).replace('.',',')} yıl`);
+  setToolText('noticeWeeksPill', `${noticeWeeks} hafta`);
+  setToolText('severanceGrossHint', totalYears >= 1 ? `Giydirilmiş ücret ${formatTRY(dressedGross)} ve tavan ${formatTRY(SEVERANCE_CAP_2026_H1)} ile sınırlı.` : '1 yıl dolmadan kıdem tazminatı görünümü oluşmaz.');
+  setToolText('noticeWeeksHint', noticeWeeks ? `Hizmet sürene göre bildirim süresi ${noticeWeeks} hafta.` : 'Hizmet süresi girildiğinde bildirim süresi burada görünür.');
+  setToolText('severanceNote', totalYears >= 1
+    ? `Kıdem tarafında ${formatTRY(severanceStamp)} damga vergisi düşülmüş net tahmin gösteriliyor. İhbar tarafında seçilen %${Math.round(taxRate * 100)} gelir vergisi oranı ile hızlı net görünüm üretildi.`
+    : 'Kıdem tazminatı için genel kural olarak en az 1 yıllık hizmet gerekir. İhbar tarafı ise girilen süreye göre hızlı görünüm üretmeye devam eder.');
+}
+function resetRaiseTool(){
+  ['raiseCurrentSalary','raiseValue'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  const basis = document.getElementById('raiseBasis');
+  const type = document.getElementById('raiseType');
+  if(basis) basis.value = 'gross';
+  if(type) type.value = 'percent';
+  updateRaiseValueLabel();
+  setToolMoney('raiseOldResult', 0);
+  setToolMoney('raiseNewResult', 0);
+  setToolMoney('raiseMonthlyDiff', 0);
+  setToolMoney('raiseAnnualDiff', 0);
+  setToolText('raiseNewHint', 'Zam sonrası tutar.');
+  setToolText('raiseNote', 'Brüt modunda net farkı 2026 mevcut bordro parametrelerine göre yaklaşık hesaplanır; gerçek sonuç kümülatif vergi matrahına göre değişebilir.');
+}
+function updateRaiseValueLabel(){
+  const type = document.getElementById('raiseType')?.value || 'percent';
+  const label = document.getElementById('raiseValueLabel');
+  const input = document.getElementById('raiseValue');
+  if(label) label.textContent = type === 'fixed' ? 'Zam Tutarı (TL)' : 'Zam Oranı (%)';
+  if(input) input.placeholder = type === 'fixed' ? 'Örn: 7500' : 'Örn: 20';
+}
+function calculateRaiseTool(){
+  const basis = document.getElementById('raiseBasis')?.value || 'gross';
+  const type = document.getElementById('raiseType')?.value || 'percent';
+  const current = safeMoney(document.getElementById('raiseCurrentSalary')?.value);
+  const raiseValue = safeMoney(document.getElementById('raiseValue')?.value);
+  const increase = type === 'fixed' ? raiseValue : current * (raiseValue / 100);
+  const next = current + increase;
+  setToolMoney('raiseOldResult', current);
+  setToolMoney('raiseNewResult', next);
+  setToolMoney('raiseMonthlyDiff', increase);
+  setToolMoney('raiseAnnualDiff', increase * 12);
+  if(!current){
+    setToolText('raiseNewHint', 'Zam sonrası tutar.');
+    setToolText('raiseNote', 'Brüt modunda net farkı 2026 mevcut bordro parametrelerine göre yaklaşık hesaplanır; gerçek sonuç kümülatif vergi matrahına göre değişebilir.');
+    return;
+  }
+  if(basis === 'gross'){
+    const before = getGrossToNetPreviewForRaise(current);
+    const after = getGrossToNetPreviewForRaise(next);
+    setToolText('raiseNewHint', `Yaklaşık net: ${formatTRY(after.net)} | Eski net: ${formatTRY(before.net)}`);
+    setToolText('raiseNote', `Brüt zam farkı ${formatTRY(increase)}. Ocak tipi bordro görünümünde yaklaşık net artış ${formatTRY(after.net - before.net)} seviyesinde olur; yıl içi vergi matrahı ilerledikçe net fark dalgalanabilir.`);
+  }else{
+    setToolText('raiseNewHint', 'Net maaş üzerinden doğrudan artış görünümü.');
+    setToolText('raiseNote', `Net maaş bazında aylık ${formatTRY(increase)} ve yıllık ${formatTRY(increase * 12)} ek alan oluşuyor.`);
+  }
+}
+function resetUnemploymentTool(){
+  ['unemploymentAvgGross','unemploymentPremiumDays'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  const continuous = document.getElementById('unemploymentContinuous');
+  const eligibility = document.getElementById('unemploymentEligibility');
+  if(continuous) continuous.value = 'yes';
+  if(eligibility) eligibility.value = 'yes';
+  setToolMoney('unemploymentMonthlyResult', 0);
+  setToolText('unemploymentDurationResult', '0 ay');
+  setToolMoney('unemploymentCapResult', UNEMPLOYMENT_CAP_2026);
+  setToolText('unemploymentStatusResult', 'Hazır');
+  setToolText('unemploymentStatusHint', 'Alanları doldurduğunda sonuç burada netleşir.');
+  setToolText('unemploymentNote', 'Temel formül: günlük ortalama brüt kazancın %40\'ı ve aylık üst sınır olarak brüt asgari ücretin %80\'i. Nihai hak sahipliği İŞKUR kayıtları ve ayrılış koduna göre belirlenir.');
+}
+function calculateUnemploymentTool(){
+  const avgGross = safeMoney(document.getElementById('unemploymentAvgGross')?.value);
+  const premiumDays = Math.max(0, Math.round(safeMoney(document.getElementById('unemploymentPremiumDays')?.value)));
+  const continuous = document.getElementById('unemploymentContinuous')?.value === 'yes';
+  const eligibility = document.getElementById('unemploymentEligibility')?.value === 'yes';
+  let durationDays = 0;
+  if(premiumDays >= 1080) durationDays = 300;
+  else if(premiumDays >= 900) durationDays = 240;
+  else if(premiumDays >= 600) durationDays = 180;
+  const monthlyBenefit = Math.min(avgGross * 0.4, UNEMPLOYMENT_CAP_2026);
+  const eligible = avgGross > 0 && durationDays > 0 && continuous && eligibility;
+  setToolMoney('unemploymentMonthlyResult', eligible ? monthlyBenefit : 0);
+  setToolText('unemploymentDurationResult', `${Math.round(durationDays / 30)} ay`);
+  setToolMoney('unemploymentCapResult', UNEMPLOYMENT_CAP_2026);
+  if(!avgGross && !premiumDays){
+    setToolText('unemploymentStatusResult', 'Hazır');
+    setToolText('unemploymentStatusHint', 'Alanları doldurduğunda sonuç burada netleşir.');
+    return;
+  }
+  if(!continuous || !eligibility){
+    setToolText('unemploymentStatusResult', 'Şart eksik');
+    setToolText('unemploymentStatusHint', 'Son 120 gün veya ayrılış şartı sağlanmadığı için ödenek görünümü sıfırlanır.');
+    setToolText('unemploymentNote', 'Temel gün ve ücret hesabı uygun olsa bile son 120 gün kesintisiz çalışma ve haklı ayrılış şartları sağlanmadan işsizlik ödeneği bağlanmaz.');
+    return;
+  }
+  if(durationDays === 0){
+    setToolText('unemploymentStatusResult', 'Prim yetersiz');
+    setToolText('unemploymentStatusHint', 'Son 3 yılda en az 600 gün işsizlik sigortası primi gerekir.');
+    setToolText('unemploymentNote', 'İşsizlik ödeneğinde asgari gün eşiği 600’dür. 600 / 900 / 1080 gün eşiklerine göre süre 6, 8 ve 10 aya çıkar.');
+    return;
+  }
+  setToolText('unemploymentStatusResult', monthlyBenefit >= UNEMPLOYMENT_CAP_2026 ? 'Tavana takıldı' : 'Uygun');
+  setToolText('unemploymentStatusHint', monthlyBenefit >= UNEMPLOYMENT_CAP_2026 ? 'Girilen ücret ödeneği 2026 tavanına taşıyor.' : 'Girilen ücrette ödenek tavanın altında kalıyor.');
+  setToolText('unemploymentNote', `Bu görünümde aylık ödenek ${formatTRY(monthlyBenefit)} ve hak edilen süre ${Math.round(durationDays / 30)} ay. Nihai ödeme İŞKUR’un onayı ve kesinti kayıtlarına göre netleşir.`);
+}
+function resetOvertimeTool(){
+  ['overtimeGross','overtimeHours'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  const months = document.getElementById('overtimeMonths');
+  const multiplier = document.getElementById('overtimeMultiplier');
+  if(months) months.value = '1';
+  if(multiplier) multiplier.value = '1.5';
+  setToolMoney('overtimeHourlyResult', 0);
+  setToolMoney('overtimePerHourResult', 0);
+  setToolMoney('overtimeMonthlyResult', 0);
+  setToolMoney('overtimeTotalResult', 0);
+  setToolText('overtimeNote', 'Bu araç brüt fazla mesai karşılığını gösterir. Bordroda uygulanacak vergi ve diğer kesintiler işveren bordro düzenine göre değişebilir.');
+}
+function calculateOvertimeTool(){
+  const gross = safeMoney(document.getElementById('overtimeGross')?.value);
+  const hours = safeMoney(document.getElementById('overtimeHours')?.value);
+  const months = Math.max(1, Math.round(safeMoney(document.getElementById('overtimeMonths')?.value) || 1));
+  const multiplier = Math.max(1, Number(document.getElementById('overtimeMultiplier')?.value || 1.5));
+  const hourlyGross = gross / 225;
+  const perHour = hourlyGross * multiplier;
+  const monthly = perHour * hours;
+  const total = monthly * months;
+  setToolMoney('overtimeHourlyResult', hourlyGross);
+  setToolMoney('overtimePerHourResult', perHour);
+  setToolMoney('overtimeMonthlyResult', monthly);
+  setToolMoney('overtimeTotalResult', total);
+  setToolText('overtimeNote', gross && hours
+    ? `${hours.toLocaleString('tr-TR')} saat ve ${multiplier.toFixed(1).replace('.',',')} katsayı ile aylık fazla mesai brütü ${formatTRY(monthly)} görünüyor.`
+    : 'Bu araç brüt fazla mesai karşılığını gösterir. Bordroda uygulanacak vergi ve diğer kesintiler işveren bordro düzenine göre değişebilir.');
+}
+function resetLeaveTool(){
+  ['leaveYears','leaveAge','leaveGross','leaveUnusedDays'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  setToolText('leaveEntitlementResult', '0 gün');
+  setToolMoney('leaveDailyGrossResult', 0);
+  setToolMoney('leaveUnusedGrossResult', 0);
+  setToolText('leaveStatusResult', 'Hazır');
+  setToolText('leaveStatusHint', 'Hesap sonrası kısa yorum burada görünür.');
+  setToolText('leaveNote', '1-5 yıl için 14 gün, 5-15 yıl arası için 20 gün, 15 yıl üzeri için 26 gün baz alınır. 18 yaş altı ve 50 yaş üstünde alt sınır en az 20 gündür.');
+}
+function calculateLeaveTool(){
+  const years = safeMoney(document.getElementById('leaveYears')?.value);
+  const age = Math.round(safeMoney(document.getElementById('leaveAge')?.value));
+  const gross = safeMoney(document.getElementById('leaveGross')?.value);
+  const unusedDays = Math.max(0, Math.round(safeMoney(document.getElementById('leaveUnusedDays')?.value)));
+  let entitlement = 0;
+  if(years >= 15) entitlement = 26;
+  else if(years > 5) entitlement = 20;
+  else if(years >= 1) entitlement = 14;
+  if((age > 0 && age < 18) || age >= 50) entitlement = Math.max(entitlement, 20);
+  const dailyGross = gross / 30;
+  const unusedGross = dailyGross * unusedDays;
+  setToolText('leaveEntitlementResult', `${entitlement} gün`);
+  setToolMoney('leaveDailyGrossResult', dailyGross);
+  setToolMoney('leaveUnusedGrossResult', unusedGross);
+  if(!years && !age && !gross && !unusedDays){
+    setToolText('leaveStatusResult', 'Hazır');
+    setToolText('leaveStatusHint', 'Hesap sonrası kısa yorum burada görünür.');
+    return;
+  }
+  setToolText('leaveStatusResult', entitlement ? 'Hak oluştu' : '1 yıl beklenir');
+  setToolText('leaveStatusHint', entitlement ? `${unusedDays} kullanılmamış gün için brüt karşılık ${formatTRY(unusedGross)}.` : 'Genel kural olarak yıllık ücretli izin hakkı 1 yıl dolunca doğar.');
+  setToolText('leaveNote', entitlement
+    ? `Yaş ve kıdem bilgine göre yıllık izin hakkı ${entitlement} gün görünüyor. Kullanılmayan izin ücreti brüt günlük ücret üzerinden yaklaşık hesaplandı.`
+    : 'Genel kural olarak yıllık ücretli izin hakkı için aynı işverende en az 1 yıl çalışma gerekir.');
 }
 function calculateSalaryTaxModule(){
   const gross = safeMoney(document.getElementById('salaryGross')?.value);
@@ -5215,6 +5892,56 @@ const retirementCalcBtn = document.getElementById('retirementCalcBtn');
 if(retirementCalcBtn) retirementCalcBtn.addEventListener('click', calculateRetirementPreview);
 const retirementResetBtn = document.getElementById('retirementResetBtn');
 if(retirementResetBtn) retirementResetBtn.addEventListener('click', resetRetirementPreview);
+['severanceGross','severanceBenefits','severanceTaxRate','severanceYears','severanceMonths','severanceDays'].forEach(id=>{
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', calculateSeveranceTool);
+});
+const severanceCalcBtn = document.getElementById('severanceCalcBtn');
+if(severanceCalcBtn) severanceCalcBtn.addEventListener('click', calculateSeveranceTool);
+const severanceResetBtn = document.getElementById('severanceResetBtn');
+if(severanceResetBtn) severanceResetBtn.addEventListener('click', resetSeveranceTool);
+['raiseBasis','raiseType'].forEach(id=>{
+  const el = document.getElementById(id);
+  if(el) el.addEventListener('change', ()=>{
+    if(id === 'raiseType') updateRaiseValueLabel();
+    calculateRaiseTool();
+  });
+});
+['raiseCurrentSalary','raiseValue'].forEach(id=>{
+  const el = document.getElementById(id);
+  if(el) el.addEventListener('input', calculateRaiseTool);
+});
+const raiseCalcBtn = document.getElementById('raiseCalcBtn');
+if(raiseCalcBtn) raiseCalcBtn.addEventListener('click', calculateRaiseTool);
+const raiseResetBtn = document.getElementById('raiseResetBtn');
+if(raiseResetBtn) raiseResetBtn.addEventListener('click', resetRaiseTool);
+['unemploymentAvgGross','unemploymentPremiumDays','unemploymentContinuous','unemploymentEligibility'].forEach(id=>{
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', calculateUnemploymentTool);
+});
+const unemploymentCalcBtn = document.getElementById('unemploymentCalcBtn');
+if(unemploymentCalcBtn) unemploymentCalcBtn.addEventListener('click', calculateUnemploymentTool);
+const unemploymentResetBtn = document.getElementById('unemploymentResetBtn');
+if(unemploymentResetBtn) unemploymentResetBtn.addEventListener('click', resetUnemploymentTool);
+['overtimeGross','overtimeHours','overtimeMonths','overtimeMultiplier'].forEach(id=>{
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', calculateOvertimeTool);
+});
+const overtimeCalcBtn = document.getElementById('overtimeCalcBtn');
+if(overtimeCalcBtn) overtimeCalcBtn.addEventListener('click', calculateOvertimeTool);
+const overtimeResetBtn = document.getElementById('overtimeResetBtn');
+if(overtimeResetBtn) overtimeResetBtn.addEventListener('click', resetOvertimeTool);
+['leaveYears','leaveAge','leaveGross','leaveUnusedDays'].forEach(id=>{
+  const el = document.getElementById(id);
+  if(el) el.addEventListener('input', calculateLeaveTool);
+});
+const leaveCalcBtn = document.getElementById('leaveCalcBtn');
+if(leaveCalcBtn) leaveCalcBtn.addEventListener('click', calculateLeaveTool);
+const leaveResetBtn = document.getElementById('leaveResetBtn');
+if(leaveResetBtn) leaveResetBtn.addEventListener('click', resetLeaveTool);
 const applyNetBtn = document.getElementById('applyNetToIncomeBtn');
 if(applyNetBtn){
   applyNetBtn.addEventListener('click', ()=>{
@@ -5231,6 +5958,11 @@ calculateTaxModules();
 applyDefaultGrossToSalaryRows();
 calculateDetailedSalarySection();
 resetRetirementPreview();
+resetSeveranceTool();
+resetRaiseTool();
+resetUnemploymentTool();
+resetOvertimeTool();
+resetLeaveTool();
 
 document.querySelectorAll("[data-toggle-password]").forEach(btn=>btn.addEventListener("click", ()=>togglePasswordVisibility(btn.dataset.togglePassword, btn)));
 loadDraft();
@@ -5453,6 +6185,11 @@ document.addEventListener('DOMContentLoaded', function(){
     analysisSection: 'analysis',
     salarySection: 'salary',
     retirementSection: 'retirement',
+    severanceSection: 'severance',
+    raiseSection: 'raise',
+    unemploymentSection: 'unemployment',
+    overtimeSection: 'overtime',
+    leaveSection: 'leave',
     taxSection: 'tax',
     historySection: 'history',
     articlesSection: 'articles',
@@ -5467,6 +6204,11 @@ document.addEventListener('DOMContentLoaded', function(){
     analysis: 'analysisSection',
     salary: 'salarySection',
     retirement: 'retirementSection',
+    severance: 'severanceSection',
+    raise: 'raiseSection',
+    unemployment: 'unemploymentSection',
+    overtime: 'overtimeSection',
+    leave: 'leaveSection',
     tax: 'taxSection',
     history: 'historySection',
     articles: 'articlesSection',
